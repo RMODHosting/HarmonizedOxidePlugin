@@ -1,0 +1,130 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <ProjectGuid>{4861A244-588C-4AD1-9123-AB234947C02F}</ProjectGuid>
+        <RootNamespace>HarmonizedOxidePlugin</RootNamespace>
+        <AssemblyName>HarmonizedOxidePlugin</AssemblyName>
+        <TargetFramework>net48</TargetFramework>
+        <OutputType>Library</OutputType>
+
+        <Configurations>Linux;Windows</Configurations>
+
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <Configuration Condition=" '$(Configuration)' == '' ">Linux</Configuration>
+
+        <GamePlatform Condition=" '$(Configuration)' == 'Windows' ">windows</GamePlatform>
+        <GamePlatform Condition=" '$(GamePlatform)' == '' ">linux</GamePlatform>
+
+        <AssemblySearchPaths>..\..\deps\$(GamePlatform);$(AssemblySearchPaths)</AssemblySearchPaths>
+
+        <LangVersion>10</LangVersion>
+
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)' == 'Linux'">
+        <OutputPath>bin\Linux\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <Optimize>true</Optimize>
+        <DebugType>embedded</DebugType>
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <ErrorReport>prompt</ErrorReport>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)' == 'Windows'">
+        <OutputPath>bin\Windows\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <Optimize>true</Optimize>
+        <DebugType>embedded</DebugType>
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <ErrorReport>prompt</ErrorReport>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Reference Include="0Harmony">
+        <HintPath>..\..\deps\linux\0Harmony.dll</HintPath>
+      </Reference>
+      <Reference Include="Assembly-CSharp">
+        <HintPath>..\..\deps\linux\Assembly-CSharp.dll</HintPath>
+      </Reference>
+      <Reference Include="Assembly-CSharp-firstpass">
+        <HintPath>..\..\deps\linux\Assembly-CSharp-firstpass.dll</HintPath>
+      </Reference>
+      <Reference Include="Facepunch.Console">
+        <HintPath>..\..\deps\linux\Facepunch.Console.dll</HintPath>
+      </Reference>
+      <Reference Include="Facepunch.Input">
+        <HintPath>..\..\deps\linux\Facepunch.Input.dll</HintPath>
+      </Reference>
+      <Reference Include="Facepunch.Network">
+        <HintPath>..\..\deps\linux\Facepunch.Network.dll</HintPath>
+      </Reference>
+      <Reference Include="Facepunch.Rcon">
+        <HintPath>..\..\deps\linux\Facepunch.Rcon.dll</HintPath>
+      </Reference>
+      <Reference Include="Facepunch.Sqlite">
+        <HintPath>..\..\deps\linux\Facepunch.Sqlite.dll</HintPath>
+      </Reference>
+      <Reference Include="Facepunch.System">
+        <HintPath>..\..\deps\linux\Facepunch.System.dll</HintPath>
+      </Reference>
+      <Reference Include="Facepunch.Unity">
+        <HintPath>..\..\deps\linux\Facepunch.Unity.dll</HintPath>
+      </Reference>
+      <Reference Include="Facepunch.UnityEngine">
+        <HintPath>..\..\deps\linux\Facepunch.UnityEngine.dll</HintPath>
+      </Reference>
+      <Reference Include="Oxide.Core">
+        <HintPath>..\..\deps\linux\Oxide.Core.dll</HintPath>
+      </Reference>
+      <Reference Include="Oxide.CSharp">
+        <HintPath>..\..\deps\linux\Oxide.CSharp.dll</HintPath>
+      </Reference>
+      <Reference Include="Oxide.References">
+        <HintPath>..\..\deps\linux\Oxide.References.dll</HintPath>
+      </Reference>
+      <Reference Include="Oxide.Rust">
+        <HintPath>..\..\deps\linux\Oxide.Rust.dll</HintPath>
+      </Reference>
+      <Reference Include="Oxide.Unity">
+        <HintPath>..\..\deps\linux\Oxide.Unity.dll</HintPath>
+      </Reference>
+      <Reference Include="Rust.Data">
+        <HintPath>..\..\deps\linux\Rust.Data.dll</HintPath>
+      </Reference>
+      <Reference Include="Rust.FileSystem">
+        <HintPath>..\..\deps\linux\Rust.FileSystem.dll</HintPath>
+      </Reference>
+      <Reference Include="Rust.Global">
+        <HintPath>..\..\deps\linux\Rust.Global.dll</HintPath>
+      </Reference>
+      <Reference Include="Rust.Harmony">
+        <HintPath>..\..\deps\linux\Rust.Harmony.dll</HintPath>
+      </Reference>
+      <Reference Include="Rust.UI">
+        <HintPath>..\..\deps\linux\Rust.UI.dll</HintPath>
+      </Reference>
+      <Reference Include="Rust.World">
+        <HintPath>..\..\deps\linux\Rust.World.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine">
+        <HintPath>..\..\deps\linux\UnityEngine.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.CoreModule">
+        <HintPath>..\..\deps\linux\UnityEngine.CoreModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.PhysicsModule">
+        <HintPath>..\..\deps\linux\UnityEngine.PhysicsModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.TextRenderingModule">
+        <HintPath>..\..\deps\linux\UnityEngine.TextRenderingModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UI">
+        <HintPath>..\..\deps\linux\UnityEngine.UI.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UnityWebRequestModule">
+        <HintPath>..\..\deps\linux\UnityEngine.UnityWebRequestModule.dll</HintPath>
+      </Reference>
+    </ItemGroup> 
+</Project>
